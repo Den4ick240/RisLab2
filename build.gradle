@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id "org.unbroken-dome.xjc" version "2.0.0"
+}
+
+group 'ru.nsu.zhigalov.ris'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "javax.xml.bind:jaxb-api:2.3.0"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.1"
+    implementation "com.sun.xml.bind:jaxb-impl:2.3.0"
+    implementation "com.sun.xml.bind:jaxb-core:2.3.0"
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    implementation 'commons-cli:commons-cli:1.5.0'
+    implementation 'org.apache.commons:commons-compress:1.21'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
